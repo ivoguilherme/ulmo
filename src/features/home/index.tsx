@@ -1,19 +1,19 @@
-import { Text, View, ScrollView } from "react-native";
-import Theme from "../../config/theme";
-import { Entypo } from "@expo/vector-icons";
-import styles from "./styles";
-import TextField from "../../components/text-field";
-import Slider from "../../components/slider";
-import RoomsList from "../../components/rooms-list";
+import { Text, View, ScrollView } from 'react-native';
+import Theme from '../../config/theme';
+import { Entypo } from '@expo/vector-icons';
+import styles from './styles';
+import TextField from '../../components/text-field';
+import Slider from '../../components/slider';
+import RoomsList from '../../components/rooms-list';
 
-export default function HomeScreen({ navigation }: any) {
+export default function Home({ navigation }: any) {
   const theme = Theme.getInstance();
 
   const renderIcon = () => (
     <Entypo
       size={24}
       name="magnifying-glass"
-      color={theme.getColor("giratina500")}
+      color={theme.getColor('giratina500')}
       style={{ lineHeight: 24 }}
     />
   );
@@ -33,7 +33,7 @@ export default function HomeScreen({ navigation }: any) {
       <View style={styles.roomsWrapper}>
         <RoomsList
           onClick={(title) => {
-            navigation.navigate("categories", { title });
+            navigation.navigate('categories', { title });
           }}
         />
       </View>

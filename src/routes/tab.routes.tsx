@@ -1,15 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   createBottomTabNavigator,
   BottomTabNavigationOptions,
-} from "@react-navigation/bottom-tabs";
-import { Text } from "react-native";
-import Theme from "../config/theme";
-import { Feather, Ionicons } from "@expo/vector-icons";
-import ShopScreen from "../features/shop-screen";
-import FavoritesScreen from "../features/favorites-screen";
-import ProfileScreen from "../features/profile-screen";
-import HomeStackRoutes from "./home.routes";
+} from '@react-navigation/bottom-tabs';
+import { Text } from 'react-native';
+import Theme from '../config/theme';
+import { Feather, Ionicons } from '@expo/vector-icons';
+import Shop from '../features/shop';
+import FavoritesScreen from '../features/favorites';
+import Profile from '../features/profile';
+import HomeStackRoutes from './home.routes';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -21,7 +21,7 @@ type TTabScreen = {
 
 const tabScreens: TTabScreen[] = [
   {
-    name: "Home",
+    name: 'Home',
     component: HomeStackRoutes,
     options: {
       tabBarLabel: undefined,
@@ -34,8 +34,8 @@ const tabScreens: TTabScreen[] = [
     },
   },
   {
-    name: "Shop",
-    component: ShopScreen,
+    name: 'Shop',
+    component: Shop,
     options: {
       tabBarIcon({ size, color }) {
         return <Feather name="shopping-bag" size={size} color={color} />;
@@ -43,7 +43,7 @@ const tabScreens: TTabScreen[] = [
     },
   },
   {
-    name: "Favorites",
+    name: 'Favorites',
     component: FavoritesScreen,
     options: {
       tabBarIcon({ size, color }) {
@@ -52,8 +52,8 @@ const tabScreens: TTabScreen[] = [
     },
   },
   {
-    name: "Profile",
-    component: ProfileScreen,
+    name: 'Profile',
+    component: Profile,
     options: {
       tabBarIcon({ size, color }) {
         return <Ionicons name="person-outline" size={size} color={color} />;
@@ -70,8 +70,8 @@ export default function TabRoutes() {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: { height: 64 },
-        tabBarActiveTintColor: theme.getColor("black"),
-        tabBarInactiveTintColor: theme.getColor("giratina400"),
+        tabBarActiveTintColor: theme.getColor('black'),
+        tabBarInactiveTintColor: theme.getColor('giratina400'),
       }}
     >
       {tabScreens.map((screen) => (

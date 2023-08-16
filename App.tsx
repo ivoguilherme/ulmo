@@ -1,18 +1,18 @@
-import SplashScreen from "./src/features/splash-screen";
-import { useFonts } from "expo-font";
-import * as ExpoSplashScreen from "expo-splash-screen";
-import { useCallback, useState } from "react";
-import Routes from "./src/routes";
+import Splash from './src/features/splash';
+import { useFonts } from 'expo-font';
+import * as ExpoSplashScreen from 'expo-splash-screen';
+import { useCallback, useState } from 'react';
+import Routes from './src/routes';
 
 ExpoSplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [fontsLoaded, fontError] = useFonts({
-    "Poppins-Light": require("./assets/fonts/Poppins-Light.ttf"),
-    "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
-    "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
-    "Poppins-SemiBold": require("./assets/fonts/Poppins-SemiBold.ttf"),
+    'Poppins-Light': require('./assets/fonts/Poppins-Light.ttf'),
+    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf'),
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -27,5 +27,5 @@ export default function App() {
 
   if (!fontsLoaded && !fontError) return null;
 
-  return isLoading ? <SplashScreen onLayout={onLayoutRootView} /> : <Routes />;
+  return isLoading ? <Splash onLayout={onLayoutRootView} /> : <Routes />;
 }
