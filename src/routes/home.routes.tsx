@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../features/home';
-import Categories from '../features/categories';
+import { CategoriesPage } from '../features/categories';
 import HeaderNavigation from '../components/header-navigation';
+import CategoryProductsPage from '../features/categories/category-products.page';
 
 export default function HomeStackRoutes() {
   const { Navigator, Screen } = createNativeStackNavigator();
@@ -17,11 +18,16 @@ export default function HomeStackRoutes() {
       />
       <Screen
         name="categories"
-        component={Categories}
+        component={CategoriesPage}
         options={{
-          header(props) {
-            return <HeaderNavigation {...props} />;
-          },
+          header: HeaderNavigation,
+        }}
+      />
+      <Screen
+        name="category-products"
+        component={CategoryProductsPage}
+        options={{
+          header: HeaderNavigation,
         }}
       />
     </Navigator>

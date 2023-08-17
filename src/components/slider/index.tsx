@@ -1,24 +1,24 @@
-import { FlatList, Image, ImageBackground, Text } from "react-native";
-import { LinearGradient, LinearGradientPoint } from "expo-linear-gradient";
-import Theme from "../../config/theme";
-import styles from "./styles";
+import { FlatList, Image, ImageBackground, Text } from 'react-native';
+import { LinearGradient, LinearGradientPoint } from 'expo-linear-gradient';
+import Theme from '../../config/theme';
+import styles from './styles';
 
 const listData = [
   {
-    text: "best of 2020",
-    image: require("../../../assets/images/slide1.png"),
+    text: 'best of 2020',
+    image: require('../../../assets/images/slide1.png'),
   },
   {
-    text: "the golden hour",
-    image: require("../../../assets/images/slide2.png"),
+    text: 'the golden hour',
+    image: require('../../../assets/images/slide2.png'),
   },
   {
-    text: "lovely kitchen",
-    image: require("../../../assets/images/slide3.png"),
+    text: 'lovely kitchen',
+    image: require('../../../assets/images/slide3.png'),
   },
   {
-    text: "summer choice",
-    image: require("../../../assets/images/slide4.png"),
+    text: 'summer choice',
+    image: require('../../../assets/images/slide4.png'),
   },
 ];
 
@@ -45,8 +45,8 @@ export default function Slider() {
               style={styles.gradient}
               start={{ y: 0.4, x: 0.5 }}
               colors={[
-                `${theme.getColor("black")}00`,
-                `${theme.getColor("black")}CC`,
+                `${theme.getColor('black')}00`,
+                `${theme.getColor('black')}CC`,
               ]}
             />
             <Text style={styles.text}>{item.text}</Text>
